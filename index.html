@@ -1,18 +1,52 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>
-        DOM Manipulation task3
-    </title>
-    <link rel="stylesheet" href="styles.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Simple Web Page Builder</title>
+  <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <div class="btn">
-        <button>+</button>
-        <p>Add New Element</p>
+    <h2>Advanced Web Page Builder</h2>
+
+    <!-- Form to add/edit elements -->
+    <form id="elementForm">
+      <select id="elementType" required>
+        <option value="">Select Element</option>
+        <option value="div">Div</option>
+        <option value="p">Paragraph</option>
+        <option value="h1">Heading 1</option>
+        <option value="button">Button</option>
+      </select>
+      <input type="text" id="elementText" placeholder="Text content" required />
+      <input type="text" id="elementWidth" placeholder="Width (e.g., 100px, 50%)" required />
+      <input type="text" id="elementHeight" placeholder="Height (e.g., 50px)" required />
+      <input type="text" id="textColor" placeholder="Text color (e.g., #000, red)" required />
+      <input type="text" id="bgColor" placeholder="Background color (e.g., #f0f0f0)" required />
+      <input type="text" id="display" placeholder="Display (optional, e.g., flex)" />
+      <input type="text" id="alignment" placeholder="Text align (optional, e.g., center)" />
+      <input type="text" id="border" placeholder="Border (optional, e.g., 1px solid black)" />
+      <input type="text" id="otherCSS" placeholder="Other CSS (key:value; key:value;)" />
+     
+    <button type="submit" id="saveBtn"  class="editFormBtn">Save</button>
+    <button type="button" id="cancelBtn" style="display: none; background:blue; color: white;" class="editFormBtn">Cancel</button>
+    <button type="button" id="deleteElementBtn" style="display:none; background:red; color:white;" class="editFormBtn">Delete</button>
+
+
+    </form>
+  
+    <!-- Area to display created elements -->
+    <div id="canvas"></div>
+  
+    <!-- Floating button to toggle form -->
+    <button class="fab" id="toggleFormBtn">+</button>
+    <div class="fab-label">Add New Element</div>
+
+    <div id="undoContainer">
+        <span id="undoMessage"></span>
+        <button id="undoBtn">Undo Delete</button>
     </div>
-    <script src="index.js"></script>
+
+ <script src="index.js"></script>
 </body>
 </html>

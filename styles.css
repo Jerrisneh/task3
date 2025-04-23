@@ -1,3 +1,101 @@
-body{
-    background-color: red;
-}
+   /* Base styling for layout and elements */
+   body {
+    font-family: Arial, sans-serif;
+    padding: 20px;
+    margin: 20px 60px;
+  }
+
+  /* Styling for the element creation form */
+  #elementForm {
+    display: none; /* Hidden by default */
+    flex-direction: column;
+    gap: 10px;
+    margin-bottom: 20px;
+  }
+  #submitBtn{
+    padding: 10px;
+  }
+  /* Inputs and selects in the form */
+  #elementForm input, #elementForm select {
+    padding: 8px;
+    font-size: 14px;
+  }
+
+  /* The canvas area where elements appear */
+  #canvas {
+    border: 2px dashed #ccc;
+    padding: 20px;
+    min-height: 200px;
+  }
+
+  /* Wrapper class for user-created elements */
+  .element {
+    margin: 10px 0;
+    position: relative; /* Needed for positioning controls */
+  }
+
+  /* Position controls (Edit/Delete) at top-right */
+  .controls {
+    position: absolute;
+    top: 5px;
+    right: 5px;
+  }
+
+  .controls button {
+    margin-left: 5px;
+    font-size: 18px;
+  }
+
+  /* Floating Action Button (FAB) */
+  .fab {
+    position: fixed;
+    bottom: 50px;
+    right: 50px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 50%;
+    width: 60px;
+    height: 60px;
+    font-size: 28px;
+    cursor: pointer;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+  }
+
+  /* Label above FAB */
+  .fab-label {
+    position: fixed;
+    bottom: 25px;
+    right: 12px;
+    background: white;
+    color: #333;
+    font-size: 14px;
+    padding: 4px 8px;
+    border-radius: 4px;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.15);
+  }
+  .edit-icon {
+    background: white;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    /* font-size: 14px; */
+    cursor: pointer;
+  }
+
+  .editFormBtn{
+    padding: 10px;
+    /* margin: 10px; */
+    border-radius: 4px;
+  }
+
+  #undoContainer {
+    position: fixed;
+    bottom: 80px;
+    right: 20px;
+    background: #ffc;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    display: none;
+  }
+  
